@@ -12,6 +12,7 @@ public class SplashPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_page);
 
+        //Makes this page the starting page, but delays the start activity function for 3 seconds
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

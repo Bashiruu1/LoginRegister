@@ -25,21 +25,19 @@ public class RegisterPage extends AppCompatActivity {
         registerConfirm = findViewById(R.id.register_confirm);
 
 
+
         registerConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    String firstname = firstName.getText().toString();
-                    String lastname = lastName.getText().toString();
-                    String dateofbirth = dateOfBirth.getText().toString();
-                    String emailAddress = email.getText().toString();
-                    String pass = password.getText().toString();
-
+                /*
+                    Checks to see if first name has at least three characters, last name with 1. date of birth has to have 8 characters
+                    email has to have 1 character, password has to be at least 1 character. if the user fails to meet these requirements then
+                    then a toast is sent to make the user enter the require information.
+                 */
+                if (firstName.length() < 3 || lastName.length() < 1 || dateOfBirth.length() < 8 || email.length() < 1 || password.length() < 1) {
+                    Toast.makeText(getApplicationContext(), "Please enter the required information", Toast.LENGTH_LONG).show();
+                } else {
                     startActivity(new Intent(RegisterPage.this, LoginPage.class));
-                } catch (IllegalArgumentException e) {
-
-                    //Ensures the app does no crash if missing 1 or more input from user
-                    Toast.makeText(getApplicationContext(), e.getMessage() + "Please enter the required information", Toast.LENGTH_LONG).show();
                 }
             }
         });

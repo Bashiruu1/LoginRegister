@@ -30,7 +30,7 @@ public class LoginPage extends AppCompatActivity {
                 realEmail = email.getText().toString();
                 realPasswrod = password.getText().toString();
                 if (realEmail == "johndoe@gmail.com" && realPasswrod == "password") {
-                    startActivity(new Intent(LoginPage.this, SplashPage.class));
+                    startActivity(new Intent(LoginPage.this, MainActivity.class));
                 } else {
                     Toast.makeText(LoginPage.this, "Please enter johndoe@gmail.com for email and password for password", Toast.LENGTH_LONG).show();
                 }
